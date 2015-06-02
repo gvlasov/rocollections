@@ -17,6 +17,7 @@ public interface ReadOnlyCollection<T> extends Iterable<T> {
 	default boolean isEmpty() {
 		return size() == 0;
 	}
+
 	static <T> ReadOnlyCollection<T> wrapOf(Collection<T> list) {
 		return new WrappingReadOnlyCollection<>(list);
 	}

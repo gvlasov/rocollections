@@ -28,7 +28,7 @@ public interface ReadOnlyList<T> extends ReadOnlyCollection<T> {
 
 	default int lastIndexOf(T o) {
 		int size = size();
-		for (int i = size - 1; i >= 0; i++) {
+		for (int i = size - 1; i >= 0; i--) {
 			if (this.get(i).equals(o)) {
 				return i;
 			}
