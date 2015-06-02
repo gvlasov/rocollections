@@ -16,19 +16,19 @@ public abstract class ReadOnlyCollectionTest<T> {
 	@Test
 	public void may_be_not_empty() {
 		ReadOnlyCollection<T> collection = implInstance();
-		Assert.assertFalse(collection.isEmpty());
-		Assert.assertNotEquals(0, collection.size());
+		assertFalse(collection.isEmpty());
+		assertNotEquals(0, collection.size());
 	}
 
 	@Test
 	public void may_have_size_greater_than_0() {
-		Assert.assertTrue(implInstance().size() > 0);
+		assertTrue(implInstance().size() > 0);
 	}
 
 	@Test
 	public void contains_first_iterator_result() {
 		ReadOnlyCollection<T> collection = implInstance();
-		Assert.assertTrue(
+		assertTrue(
 			collection.contains(collection.iterator().next())
 		);
 	}
@@ -40,8 +40,8 @@ public abstract class ReadOnlyCollectionTest<T> {
 		Iterator<T> iterator = collection.iterator();
 		Iterator<T> copyIterator = copy.iterator();
 		while (iterator.hasNext()) {
-			Assert.assertEquals(iterator.hasNext(), copyIterator.hasNext());
-			Assert.assertEquals(iterator.next(), copyIterator.next());
+			assertEquals(iterator.hasNext(), copyIterator.hasNext());
+			assertEquals(iterator.next(), copyIterator.next());
 		}
 	}
 
@@ -54,7 +54,7 @@ public abstract class ReadOnlyCollectionTest<T> {
 			i++;
 			iterator.next();
 		}
-		Assert.assertEquals(
+		assertEquals(
 			collection.size(),
 			i
 		);
