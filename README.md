@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/Suseika/readonly-collections.svg?branch=master)](https://travis-ci
-.org/Suseika/readonly-collections)
+[![Build Status](https://travis-ci.org/Suseika/readonly-collections.svg?branch=master)](https://travis-ci.org/Suseika/readonly-collections)
 
 # readonly-collections
 
