@@ -1,6 +1,8 @@
-package org.tendiwa.readonly;
+package org.tendiwa.readonly.test.base;
 
+import org.junit.Assert;
 import org.junit.Test;
+import org.tendiwa.readonly.ReadOnlyCollection;
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,19 +16,19 @@ public abstract class ReadOnlyCollectionTest<T> {
 	@Test
 	public void may_be_not_empty() {
 		ReadOnlyCollection<T> collection = implInstance();
-		assertFalse(collection.isEmpty());
-		assertNotEquals(0, collection.size());
+		Assert.assertFalse(collection.isEmpty());
+		Assert.assertNotEquals(0, collection.size());
 	}
 
 	@Test
 	public void may_have_size_greater_than_0() {
-		assertTrue(implInstance().size() > 0);
+		Assert.assertTrue(implInstance().size() > 0);
 	}
 
 	@Test
 	public void contains_first_iterator_result() {
 		ReadOnlyCollection<T> collection = implInstance();
-		assertTrue(
+		Assert.assertTrue(
 			collection.contains(collection.iterator().next())
 		);
 	}
@@ -38,8 +40,8 @@ public abstract class ReadOnlyCollectionTest<T> {
 		Iterator<T> iterator = collection.iterator();
 		Iterator<T> copyIterator = copy.iterator();
 		while (iterator.hasNext()) {
-			assertEquals(iterator.hasNext(), copyIterator.hasNext());
-			assertEquals(iterator.next(), copyIterator.next());
+			Assert.assertEquals(iterator.hasNext(), copyIterator.hasNext());
+			Assert.assertEquals(iterator.next(), copyIterator.next());
 		}
 	}
 
@@ -52,7 +54,7 @@ public abstract class ReadOnlyCollectionTest<T> {
 			i++;
 			iterator.next();
 		}
-		assertEquals(
+		Assert.assertEquals(
 			collection.size(),
 			i
 		);
