@@ -1,5 +1,7 @@
 package org.tendiwa.readonly;
 
+import java.util.List;
+
 public interface ReadOnlyList<T> extends ReadOnlyCollection<T> {
 	T get(int index);
 
@@ -32,5 +34,9 @@ public interface ReadOnlyList<T> extends ReadOnlyCollection<T> {
 			}
 		}
 		return -1;
+	}
+
+	static <T> ReadOnlyList<T> wrapOf(List<T> list) {
+		return new WrappingReadOnlyList<>(list);
 	}
 }
