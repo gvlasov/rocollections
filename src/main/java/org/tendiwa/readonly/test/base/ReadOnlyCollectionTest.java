@@ -1,6 +1,5 @@
 package org.tendiwa.readonly.test.base;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.tendiwa.readonly.ReadOnlyCollection;
 
