@@ -28,8 +28,8 @@ public abstract class ReadOnlyListTest<T> extends ReadOnlyCollectionTest<T> {
 	@Test
 	public void get_and_lastIndexOf_match_indexwise() {
 		ReadOnlyList<T> list = implInstance();
-		for (int i = list.size()-1; i >= 0; i++) {
-			assertTrue(list.indexOf(list.get(i)) >= i);
+		for (int i = list.size() - 1; i >= 0; i--) {
+			assertTrue(list.lastIndexOf(list.get(i)) >= i);
 		}
 	}
 }
