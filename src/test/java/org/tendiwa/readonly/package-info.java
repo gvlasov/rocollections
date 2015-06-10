@@ -21,55 +21,5 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 package org.tendiwa.readonly;
-
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Stream;
-
-/**
- * Wraps a {@link java.util.List} to expose only its accessors.
- *
- * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
- */
-public final class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
-    /**
-     * Wrapped list.
-     */
-    private final List<T> wrapped;
-
-    /**
-     * Public ctor.
-     *
-     * @param wrp Wrapped list.
-     */
-    public WrappingReadOnlyList(final List<T> wrp) {
-        this.wrapped = wrp;
-    }
-
-    @Override
-    public T get(final int index) {
-        return this.wrapped.get(index);
-    }
-
-    @Override
-    public boolean contains(final T element) {
-        return this.wrapped.contains(element);
-    }
-
-    @Override
-    public int size() {
-        return this.wrapped.size();
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return this.wrapped.iterator();
-    }
-
-    @Override
-    public Stream<T> stream() {
-        return this.wrapped.stream();
-    }
-}

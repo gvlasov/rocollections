@@ -1,33 +1,70 @@
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2015, Georgy Vlasov
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 package org.tendiwa.readonly;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
+/**
+ * Wraps a {@link java.util.Collection} to expose only its accessors.
+ *
+ * @author Georgy Vlasov (suseika@tendiwa.org)
+ * @version $Id$
+ */
 final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
-	private final Collection<T> collection;
+    /**
+     * Wrapped collection.
+     */
+    private final Collection<T> wrapped;
 
-	public WrappingReadOnlyCollection(Collection<T> collection) {
-		this.collection = collection;
-	}
+    /**
+     * Public ctor.
+     *
+     * @param wrp Wrapped collection.
+     */
+    public WrappingReadOnlyCollection(final Collection<T> wrp) {
+        this.wrapped = wrp;
+    }
 
-	@Override
-	public boolean contains(T object) {
-		return collection.contains(object);
-	}
+    @Override
+    public boolean contains(final T element) {
+        return this.wrapped.contains(element);
+    }
 
-	@Override
-	public int size() {
-		return collection.size();
-	}
+    @Override
+    public int size() {
+        return this.wrapped.size();
+    }
 
-	@Override
-	public Iterator<T> iterator() {
-		return collection.iterator();
-	}
+    @Override
+    public Iterator<T> iterator() {
+        return this.wrapped.iterator();
+    }
 
-	@Override
-	public Stream<T> stream() {
-		return collection.stream();
-	}
+    @Override
+    public Stream<T> stream() {
+        return this.wrapped.stream();
+    }
 }
