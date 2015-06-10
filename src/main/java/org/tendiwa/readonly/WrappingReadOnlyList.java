@@ -37,7 +37,7 @@ public final class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
     /**
      * Wrapped list.
      */
-    private final List<T> wrapped;
+    private final transient List<T> wrapped;
 
     /**
      * Public ctor.

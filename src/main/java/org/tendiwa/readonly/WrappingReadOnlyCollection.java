@@ -37,7 +37,7 @@ final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
     /**
      * Wrapped collection.
      */
-    private final Collection<T> wrapped;
+    private final transient Collection<T> wrapped;
 
     /**
      * Public ctor.

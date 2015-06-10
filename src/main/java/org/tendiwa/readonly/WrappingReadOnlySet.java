@@ -40,7 +40,7 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
     /**
      * The wrapped Set instance.
      */
-    private final Set<T> set;
+    private final transient Set<T> set;
 
     /**
      * Wraps a {@link java.util.Set}.
