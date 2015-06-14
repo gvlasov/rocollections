@@ -23,10 +23,10 @@
  */
 package org.tropinka.readonly;
 
-import javax.annotation.Nonnull;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.stream.Stream;
+import javax.annotation.Nonnull;
 
 /**
  * Wraps a {@link java.util.Set} with a {@link ReadOnlySet}.
