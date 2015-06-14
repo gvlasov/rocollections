@@ -2,19 +2,41 @@
 
 # readonly-collections
 
-Wrappers for Java Collections that let you expose only read-only interfaces where you need to.
+Wrappers for Java Collections that let you expose only read-only interfaces 
+where you need to.
 
 ## Rationale
 
-Java Collections API is flawed in a way that every collection interface is mutable. This presents the following 
+Java Collections API is flawed in a way that every collection interface has 
+mutator methods like `add()`, `remove()` or `put()`. This presents the following 
 implications:
 
-### 1. Lots of unused methods to implement
+### 1. Wrong abstraction
 
-When you implement a Collection descendant interface (`List`, `Set`) or `Map`, you have to provide an 
-implementation for methods like `add()` and `put()`. If your collection is not supposed to be mutated (but rather 
-populated at the construction time, as for example Guava Collections), then you don't need those methods. But you 
-have to provide at least some implementation, so you stub those methods with something like:
+Mutable collections and read-only collections are two completely different sets 
+of abstractions. Mutable collections are data structures. Read-only collections 
+are mathematical objects: 
+
+- ReadOnlySet is a set;
+- ReadOnlyList is function from integers to members of some set;
+- ReadOnlyMap is a function from a set of keys to a set of values;
+
+In math texts, when we give a mathematical object a name, like "let set A be 
+{x | x > 3 and x < 9} united with {y | y > -2 and y <1}", we don't change 
+contents of a math object referred by that name, which is similar to the concept 
+of immutability in programming.
+
+This stipulation removes unnecessary complexity that would be present if we were 
+to represent math objects with java.util.Collection implementations.
+
+### 2. Lots of unused methods to implement
+
+When you implement a Collection descendant interface (`List`, `Set`) or `Map`, 
+you have to provide an implementation for methods like `add()` and `put()`. If 
+your collection is not supposed to be mutated (but rather populated at the 
+construction time, as for example Guava Collections), then you don't need those 
+methods. But you have to provide at least some implementation, so you stub those 
+methods with something like:
 
 ```java
 public class Polygon implements List<Point2D> {
@@ -27,35 +49,6 @@ public class Polygon implements List<Point2D> {
 }
 ```
 
-And those methods will still show up in the completion dialog in your IDE and in the documentation.
+And those methods will still show up in the completion dialog in your IDE and in
+the documentation.
 
-If you want proper read-only collections, then you just shouldn't even have those methods in your interface in the 
-first place. That is, you shouldn't be using the Java Collection API interfaces. That is, you should be using 
-**readonly-collections**
-
-### 2. 
-When in some algorithm implementation you have a mutable collection that is populated with the results of that 
-algorithm, then in order to return the results you have to either return the mutable `Collection` (gross!), wrap it 
-in a Guava Immutable Collection (may be costly).
-
-```java
-public class RasterizedPolygonGroup extends ReadableSet<Raster> {
-    RasterizedPolygonGroup(
-        ReadOnlyCollection polygons
-    ) {
-        
-    }
-}
-```
-
-## Why the hell would I ever want to subclass a Collection?
-
-
-
-## Alternatives to readonly-collections
-
-Google Guava provides a truly immutable set of implementations that is compatible with Java Collections API, but it 
-has the following issues:
-
-1. There are still the mutator methods, just marked as `@Deprecated`
-2. You can't extend any of the immutable collections implementations.
