@@ -23,11 +23,12 @@ are mathematical objects:
 
 In math texts, when we give a mathematical object a name, like "let set A be 
 {x | x > 3 and x < 9} united with {y | y > -2 and y <1}", we don't change 
-contents of a math object referred by that name, which is similar to the concept 
-of immutability in programming.
+contents of a math object referred by that name. For instance, we don't add 
+elements saying "let set A be the same set A but with one more element k". That 
+is similar to the concept of immutability in programming.
 
-This stipulation removes unnecessary complexity that would be present if we were 
-to represent math objects with java.util.Collection implementations.
+Lack of mutators removes unnecessary complexity that would be here if we were to
+represent math objects with `java.util.Collection` implementations.
 
 ### 2. Lots of unused methods to implement
 
