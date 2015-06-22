@@ -21,50 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.stream.Stream;
+package org.tendiwa.rocollections;
 
 /**
- * Wraps a {@link java.util.Collection} to expose only its accessors.
+ * A set with only accessors and no mutators.
  *
+ * @param <T> Type of elements of the set.
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
+public interface ReadOnlySet<T> extends ReadOnlyCollection<T> {
     /**
-     * Wrapped collection.
-     */
-    private final transient Collection<T> wrapped;
-
-    /**
-     * Public ctor.
+     * Checks if a set contains a particular element.
      *
-     * @param wrp Wrapped collection.
+     * @param element An element to check for.
+     * @return True if set contains an element, false if it doesn't.
+     * @see java.util.Set#contains(Object)
      */
-    public WrappingReadOnlyCollection(final Collection<T> wrp) {
-        this.wrapped = wrp;
-    }
-
     @Override
-    public boolean contains(final T element) {
-        return this.wrapped.contains(element);
-    }
-
-    @Override
-    public int size() {
-        return this.wrapped.size();
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return this.wrapped.iterator();
-    }
-
-    @Override
-    public Stream<T> stream() {
-        return this.wrapped.stream();
-    }
+    boolean contains(T element);
 }

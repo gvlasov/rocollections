@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly.test.base;
+package org.tendiwa.rocollections.test.base;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.tropinka.readonly.ReadOnlyList;
+import org.tendiwa.rocollections.ReadOnlyList;
 
 /**
  * A base test for {@link ReadOnlyList}s.

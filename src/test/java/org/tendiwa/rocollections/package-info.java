@@ -22,4 +22,4 @@
  * SOFTWARE.
  */
 
-package org.tropinka.readonly;
+package org.tendiwa.rocollections;

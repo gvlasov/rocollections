@@ -21,23 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
 
 /**
- * A set with only accessors and no mutators.
+ * Base tests for ReadOnlyCollections.
  *
- * @param <T> Type of elements of the set.
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-public interface ReadOnlySet<T> extends ReadOnlyCollection<T> {
-    /**
-     * Checks if a set contains a particular element.
-     *
-     * @param element An element to check for.
-     * @return True if set contains an element, false if it doesn't.
-     * @see java.util.Set#contains(Object)
-     */
-    @Override
-    boolean contains(T element);
-}
+package org.tendiwa.rocollections.test.base;

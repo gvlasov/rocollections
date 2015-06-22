@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
+package org.tendiwa.rocollections;
 
 /**
  * A list with only accessors and no mutators.

@@ -21,47 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
-
-import java.util.stream.Stream;
 
 /**
- * A collection without mutators, only with accessors.
+ * Interfaces and implementations for read-only collections.
  *
- * @param <T> Type of elements of the collection.
- * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * Read-only collections wrap plain old Java Collections and provide a new
+ * interface to them with just read-only methods.
+ *
+ * Read-only collections don't enforce immutability. If the wrapped collection
+ * is mutable, it may be mutated. It is the task of the one who wrapped the
+ * mutable collection with a read-only collection to ensure that the wrapped
+ * collection is not mutated by anything.
+ *
+ * @author Suseika
  */
-public interface ReadOnlyCollection<T> extends Iterable<T> {
-    /**
-     * Checks if this ReadOnlyCollection contains a particular object with the
-     * same rules as {@link java.util.Collection#contains(Object)}.
-     *
-     * @param object An object to search for.
-     * @return True if object is present in collection, false otherwise.
-     */
-    boolean contains(T object);
-
-    /**
-     * Size of this collection.
-     *
-     * @return Number of elements in this collection.
-     */
-    int size();
-
-    /**
-     * Stream over elements of this collection.
-     *
-     * @return Stream over elements of this collection.
-     */
-    Stream<T> stream();
-
-    /**
-     * Checks if this collection is empty.
-     *
-     * @return True if the collection is empty, false if there are any elements.
-     */
-    default boolean isEmpty() {
-        return this.size() == 0;
-    }
-}
+package org.tendiwa.rocollections;

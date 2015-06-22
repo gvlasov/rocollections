@@ -21,69 +21,47 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
+package org.tendiwa.rocollections;
 
-import java.util.Iterator;
-import java.util.Set;
 import java.util.stream.Stream;
-import javax.annotation.Nonnull;
 
 /**
- * Wraps a {@link java.util.Set} with a {@link ReadOnlySet}.
+ * A collection without mutators, only with accessors.
  *
  * @param <T> Type of elements of the collection.
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-@SuppressWarnings("unused")
-public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
+public interface ReadOnlyCollection<T> extends Iterable<T> {
     /**
-     * The wrapped Set instance.
-     */
-    private final transient Set<T> set;
-
-    /**
-     * Wraps a {@link java.util.Set}.
+     * Checks if this ReadOnlyCollection contains a particular object with the
+     * same rules as {@link java.util.Collection#contains(Object)}.
      *
-     * @param wrapped A set to wrap.
+     * @param object An object to search for.
+     * @return True if object is present in collection, false otherwise.
      */
-    WrappingReadOnlySet(final Set<T> wrapped) {
-        this.set = wrapped;
-    }
-
-    @Override
-    public boolean contains(final T element) {
-        return this.set.contains(element);
-    }
+    boolean contains(T object);
 
     /**
-     * Size of this set.
+     * Size of this collection.
      *
-     * @return Size of this set.
+     * @return Number of elements in this collection.
      */
-    @Override
-    public int size() {
-        return this.set.size();
-    }
+    int size();
 
     /**
-     * Iterator over elements of this set.
+     * Stream over elements of this collection.
      *
-     * @return Iterator over elements of this set.
+     * @return Stream over elements of this collection.
      */
-    @Nonnull
-    @Override
-    public Iterator<T> iterator() {
-        return this.set.iterator();
-    }
+    Stream<T> stream();
 
     /**
-     * Stream over elements of this set.
+     * Checks if this collection is empty.
      *
-     * @return Stream over elements of this set.
+     * @return True if the collection is empty, false if there are any elements.
      */
-    @Override
-    public Stream<T> stream() {
-        return this.set.stream();
+    default boolean isEmpty() {
+        return this.size() == 0;
     }
 }

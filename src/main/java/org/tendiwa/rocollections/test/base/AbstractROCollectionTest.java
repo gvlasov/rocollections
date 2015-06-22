@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly.test.base;
+package org.tendiwa.rocollections.test.base;
 
 import com.google.common.collect.Iterators;
 import java.util.Iterator;
@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.Assert;
 import org.junit.Test;
-import org.tropinka.readonly.ReadOnlyCollection;
+import org.tendiwa.rocollections.ReadOnlyCollection;
 
 /**
  * A base test for {@link ReadOnlyCollection}s.

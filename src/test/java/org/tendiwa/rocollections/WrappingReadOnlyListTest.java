@@ -21,13 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.tropinka.readonly;
+package org.tendiwa.rocollections;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
-import org.tropinka.readonly.test.base.AbstractROCollectionTest;
-import org.tropinka.readonly.test.base.AbstractROListTest;
+import org.tendiwa.rocollections.test.base.AbstractROCollectionTest;
+import org.tendiwa.rocollections.test.base.AbstractROListTest;
 
 /**
  * Tests a {@link WrappingReadOnlyList} created with an {@link ImmutableList}

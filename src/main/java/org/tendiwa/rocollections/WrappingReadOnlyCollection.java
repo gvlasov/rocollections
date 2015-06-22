@@ -21,11 +21,50 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package org.tendiwa.rocollections;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.stream.Stream;
 
 /**
- * Base tests for ReadOnlyCollections.
+ * Wraps a {@link java.util.Collection} to expose only its accessors.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-package org.tropinka.readonly.test.base;
+final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
+    /**
+     * Wrapped collection.
+     */
+    private final transient Collection<T> wrapped;
+
+    /**
+     * Public ctor.
+     *
+     * @param wrp Wrapped collection.
+     */
+    public WrappingReadOnlyCollection(final Collection<T> wrp) {
+        this.wrapped = wrp;
+    }
+
+    @Override
+    public boolean contains(final T element) {
+        return this.wrapped.contains(element);
+    }
+
+    @Override
+    public int size() {
+        return this.wrapped.size();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return this.wrapped.iterator();
+    }
+
+    @Override
+    public Stream<T> stream() {
+        return this.wrapped.stream();
+    }
+}
