@@ -7,8 +7,39 @@
     <groupId>org.tropinka</groupId>
     <artifactId>readonly-collections</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+        <name>Read-only collections</name>
+    <description>Read-only wrappers for Java Collections</description>
+    <url>https://github.com/Suseika/readonly-collections</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Georgy Vlasov</name>
+            <email>suseika@tropinka.org</email>
+            <organization>Tropinka Project</organization>
+            <organizationUrl>https://tropinka.org</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git@github.com:Suseika/readonly-collections.git</connection>
+        <developerConnection>scm:git:git@github.com:Suseika/readonly-collections.git</developerConnection>
+        <url>git@github.com:Suseika/git-demo.git</url>
+    </scm>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
