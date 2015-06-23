@@ -1,3 +1,6 @@
+architect:
+  suseika
+
 decrypt:
   settings.xml: "repo/settings.xml.asc"
   pubring.gpg: "repo/pubring.gpg.asc"
@@ -9,3 +12,10 @@ release:
     mvn versions:set "-DnewVersion=${tag}"
     git commit -am "${tag}"
     mvn clean deploy --settings /home/r/settings.xml -Psonatype
+  commanders:
+  - suseika
+deploy:
+  script: |-
+    mvn clean deploy --settings /home/r/settings.xml -Psonatype
+  commanders:
+  - suseika
