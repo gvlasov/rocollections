@@ -3,12 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.tropinka</groupId>
-    <artifactId>readonly-collections</artifactId>
+    <parent>
+        <groupId>com.jcabi</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.33</version>
+    </parent>
+    <groupId>org.tendiwa</groupId>
+    <artifactId>rocollections</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-        <name>Read-only collections</name>
+    <name>Read-only collections</name>
     <description>Read-only wrappers for Java Collections</description>
     <url>https://github.com/Suseika/readonly-collections</url>
     <licenses>
@@ -20,15 +24,15 @@
     <developers>
         <developer>
             <name>Georgy Vlasov</name>
-            <email>suseika@tropinka.org</email>
-            <organization>Tropinka Project</organization>
-            <organizationUrl>https://tropinka.org</organizationUrl>
+            <email>suseika@tendiwa.org</email>
+            <organization>Tendiwa Project</organization>
+            <organizationUrl>http://tendiwa.org</organizationUrl>
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:Suseika/readonly-collections.git</connection>
-        <developerConnection>scm:git:git@github.com:Suseika/readonly-collections.git</developerConnection>
-        <url>git@github.com:Suseika/git-demo.git</url>
+        <connection>scm:git:git@github.com:Suseika/rocollections.git</connection>
+        <developerConnection>scm:git:git@github.com:Suseika/rocollections.git</developerConnection>
+        <url>git@github.com:Suseika/rocollections.git</url>
     </scm>
     <build>
         <plugins>
@@ -66,6 +70,29 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>

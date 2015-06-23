@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/Suseika/readonly-collections.svg?branch=master)](https://travis-ci.org/Suseika/readonly-collections)
 
-# readonly-collections
+# rocollections
 
-Wrappers for Java Collections that let you expose only read-only interfaces 
-where you need to.
+Wrappers for Java Collections that let you expose only <b>read-only</b> 
+interfaces where you need to.
 
 ## Rationale
 
