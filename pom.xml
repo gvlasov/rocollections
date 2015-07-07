@@ -34,12 +34,6 @@
         <developerConnection>scm:git:git@github.com:Suseika/rocollections.git</developerConnection>
         <url>git@github.com:Suseika/rocollections.git</url>
     </scm>
-	<servers>
-		<server>
-			<id>oss.sonatype.org</id>
-			<username>Suseika</username>
-		</server>
-	</server>
     <build>
         <plugins>
             <plugin>
