@@ -34,7 +34,8 @@ import org.tendiwa.rocollections.test.base.AbstractReadOnlyListTest;
  * passed into that static method.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 @RunWith(Enclosed.class)
 public final class WrappingReadOnlyListTest {

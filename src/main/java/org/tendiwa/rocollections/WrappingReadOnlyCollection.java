@@ -31,7 +31,8 @@ import java.util.stream.Stream;
  * Wraps a {@link java.util.Collection} to expose only its accessors.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
     /**

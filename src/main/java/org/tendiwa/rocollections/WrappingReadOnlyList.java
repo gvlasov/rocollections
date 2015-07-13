@@ -31,7 +31,8 @@ import java.util.stream.Stream;
  * Wraps a {@link java.util.List} to expose only its accessors.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 public class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
     /**

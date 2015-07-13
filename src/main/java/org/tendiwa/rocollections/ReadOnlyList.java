@@ -27,7 +27,8 @@ package org.tendiwa.rocollections;
  * A list with only accessors and no mutators.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 public interface ReadOnlyList<T> extends ReadOnlyCollection<T> {
     /**

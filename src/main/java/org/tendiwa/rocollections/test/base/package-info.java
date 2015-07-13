@@ -26,6 +26,6 @@
  * Base tests for ReadOnlyCollections.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
  */
 package org.tendiwa.rocollections.test.base;

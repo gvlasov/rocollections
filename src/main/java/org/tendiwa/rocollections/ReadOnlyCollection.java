@@ -30,7 +30,8 @@ import java.util.stream.Stream;
  *
  * @param <T> Type of elements of the collection.
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 public interface ReadOnlyCollection<T> extends Iterable<T> {
     /**
