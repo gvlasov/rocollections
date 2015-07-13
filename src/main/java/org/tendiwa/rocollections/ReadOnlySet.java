@@ -28,7 +28,8 @@ package org.tendiwa.rocollections;
  *
  * @param <T> Type of elements of the set.
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 public interface ReadOnlySet<T> extends ReadOnlyCollection<T> {
     /**

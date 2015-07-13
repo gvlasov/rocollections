@@ -35,7 +35,8 @@ import org.tendiwa.rocollections.ReadOnlyCollection;
  * A base test for {@link ReadOnlyCollection}s.
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
- * @version $Id$
+ * @version $tendiwa-version$
+ * @since 0.1
  */
 public abstract class AbstractReadOnlyCollectionTest<T> {
     /**
