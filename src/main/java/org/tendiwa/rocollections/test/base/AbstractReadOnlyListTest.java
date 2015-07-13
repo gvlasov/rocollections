@@ -33,8 +33,8 @@ import org.tendiwa.rocollections.ReadOnlyList;
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-public abstract class AbstractROListTest<T> extends
-    AbstractROCollectionTest<T> {
+public abstract class AbstractReadOnlyListTest<T> extends
+    AbstractReadOnlyCollectionTest<T> {
 
     /**
      * Method {@link ReadOnlyList#get(int)} should return ==-identical result on

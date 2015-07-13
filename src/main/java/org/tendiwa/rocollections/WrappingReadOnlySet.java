@@ -26,7 +26,6 @@ package org.tendiwa.rocollections;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.stream.Stream;
-import javax.annotation.Nonnull;
 
 /**
  * Wraps a {@link java.util.Set} with a {@link ReadOnlySet}.
@@ -71,7 +70,6 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
      *
      * @return Iterator over elements of this set.
      */
-    @Nonnull
     @Override
     public Iterator<T> iterator() {
         return this.set.iterator();

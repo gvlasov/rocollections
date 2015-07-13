@@ -28,7 +28,6 @@ package org.tendiwa.rocollections;
  *
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
- * @checkstyle RedundantModifierCheck (500 lines)
  */
 public interface ReadOnlyList<T> extends ReadOnlyCollection<T> {
     /**

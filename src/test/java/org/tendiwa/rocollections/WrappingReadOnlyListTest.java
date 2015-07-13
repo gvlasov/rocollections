@@ -26,8 +26,8 @@ package org.tendiwa.rocollections;
 import com.google.common.collect.ImmutableList;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
-import org.tendiwa.rocollections.test.base.AbstractROCollectionTest;
-import org.tendiwa.rocollections.test.base.AbstractROListTest;
+import org.tendiwa.rocollections.test.base.AbstractReadOnlyCollectionTest;
+import org.tendiwa.rocollections.test.base.AbstractReadOnlyListTest;
 
 /**
  * Tests a {@link WrappingReadOnlyList} created with an {@link ImmutableList}
@@ -55,14 +55,14 @@ public final class WrappingReadOnlyListTest {
         );
     }
 
-    public static class AsList extends AbstractROListTest<Object> {
+    public static class AsList extends AbstractReadOnlyListTest<Object> {
         @Override
         protected final ReadOnlyList<Object> implInstance() {
             return WrappingReadOnlyListTest.implInstance();
         }
     }
 
-    public static class AsCollection extends AbstractROCollectionTest<Object> {
+    public static class AsCollection extends AbstractReadOnlyCollectionTest<Object> {
         @Override
         protected final ReadOnlyCollection<Object> implInstance() {
             return WrappingReadOnlyListTest.implInstance();

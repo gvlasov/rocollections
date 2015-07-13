@@ -37,7 +37,7 @@ import org.tendiwa.rocollections.ReadOnlyCollection;
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-public abstract class AbstractROCollectionTest<T> {
+public abstract class AbstractReadOnlyCollectionTest<T> {
     /**
      * May be not empty.
      */

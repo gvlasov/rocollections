@@ -1,4 +1,4 @@
-/**
+/*
  * The MIT License (MIT)
  *
  * Copyright (c) 2015, Georgy Vlasov
@@ -32,7 +32,5 @@
  * is mutable, it may be mutated. It is the task of the one who wrapped the
  * mutable collection with a read-only collection to ensure that the wrapped
  * collection is not mutated by anything.
- *
- * @author Suseika
  */
 package org.tendiwa.rocollections;
