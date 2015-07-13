@@ -35,11 +35,11 @@ import java.util.stream.Stream;
  * @version $Id$
  */
 @SuppressWarnings("unused")
-public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
+public class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
     /**
      * The wrapped Set instance.
      */
-    private final transient Set<T> set;
+    private final Set<T> set;
 
     /**
      * Wraps a {@link java.util.Set}.
@@ -51,7 +51,7 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
     }
 
     @Override
-    public boolean contains(final T element) {
+    public final boolean contains(final T element) {
         return this.set.contains(element);
     }
 
@@ -61,7 +61,7 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
      * @return Size of this set.
      */
     @Override
-    public int size() {
+    public final int size() {
         return this.set.size();
     }
 
@@ -71,7 +71,7 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
      * @return Iterator over elements of this set.
      */
     @Override
-    public Iterator<T> iterator() {
+    public final Iterator<T> iterator() {
         return this.set.iterator();
     }
 
@@ -81,7 +81,7 @@ public final class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
      * @return Stream over elements of this set.
      */
     @Override
-    public Stream<T> stream() {
+    public final Stream<T> stream() {
         return this.set.stream();
     }
 }

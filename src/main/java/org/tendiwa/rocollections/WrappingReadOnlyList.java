@@ -33,7 +33,7 @@ import java.util.stream.Stream;
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-public final class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
+public class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
     /**
      * Wrapped list.
      */
@@ -49,27 +49,27 @@ public final class WrappingReadOnlyList<T> implements ReadOnlyList<T> {
     }
 
     @Override
-    public T get(final int index) {
+    public final T get(final int index) {
         return this.wrapped.get(index);
     }
 
     @Override
-    public boolean contains(final T element) {
+    public final boolean contains(final T element) {
         return this.wrapped.contains(element);
     }
 
     @Override
-    public int size() {
+    public final int size() {
         return this.wrapped.size();
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public final Iterator<T> iterator() {
         return this.wrapped.iterator();
     }
 
     @Override
-    public Stream<T> stream() {
+    public final Stream<T> stream() {
         return this.wrapped.stream();
     }
 }
