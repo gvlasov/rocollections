@@ -33,11 +33,11 @@ import java.util.stream.Stream;
  * @author Georgy Vlasov (suseika@tendiwa.org)
  * @version $Id$
  */
-final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
+class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
     /**
      * Wrapped collection.
      */
-    private final Collection<T> wrapped;
+    private final transient Collection<T> wrapped;
 
     /**
      * Public ctor.
@@ -49,22 +49,22 @@ final class WrappingReadOnlyCollection<T> implements ReadOnlyCollection<T> {
     }
 
     @Override
-    public boolean contains(final T element) {
+    public final boolean contains(final T element) {
         return this.wrapped.contains(element);
     }
 
     @Override
-    public int size() {
+    public final int size() {
         return this.wrapped.size();
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public final Iterator<T> iterator() {
         return this.wrapped.iterator();
     }
 
     @Override
-    public Stream<T> stream() {
+    public final Stream<T> stream() {
         return this.wrapped.stream();
     }
 }
