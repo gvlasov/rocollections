@@ -45,33 +45,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.3</version>
-                <executions>
-                    <execution>
-                        <id>tendiwa-javadoc-version</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <includes>
-                        <include>${project.basedir}/src/main/java/**</include>
-                        <include>${project.basedir}/src/test/java/**</include>
-                    </includes>
-                    <replacements>
-                        <replacement>
-                            <!-- replace "$tendiwa-version$" with current project version -->
-                            <value>\u0024tendiwa-version\u0024</value>
-                            <token>${project.version}</token>
-                        </replacement>
-                    </replacements>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
     <dependencies>
