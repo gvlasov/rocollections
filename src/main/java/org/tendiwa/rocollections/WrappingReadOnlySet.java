@@ -47,7 +47,7 @@ public class WrappingReadOnlySet<T> implements ReadOnlySet<T> {
      *
      * @param wrapped A set to wrap.
      */
-    WrappingReadOnlySet(final Set<T> wrapped) {
+    public WrappingReadOnlySet(final Set<T> wrapped) {
         this.set = wrapped;
     }
 
