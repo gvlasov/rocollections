@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
     <name>Read-only collections</name>
     <description>Read-only wrappers for Java Collections</description>
-    <url>https://github.com/Suseika/readonly-collections</url>
+    <url>https://github.com/Suseika/rocollections</url>
     <licenses>
         <license>
             <name>MIT License</name>
