@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.tendiwa</groupId>
     <artifactId>rocollections</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
     <name>Read-only collections</name>
     <description>Read-only wrappers for Java Collections</description>
