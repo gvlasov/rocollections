@@ -18,8 +18,8 @@ deploy:
   script: |-
     locale
     locale -a
-    sudo locale-gen ru_RU.UTF8
-    locale
-    locale -a
+    ls /usr/bin
+    ls /usr/local/bin
+    ls /bin
   commanders:
   - suseika
