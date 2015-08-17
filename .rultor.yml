@@ -18,8 +18,11 @@ deploy:
   script: |-
     locale
     locale -a
-    ls /usr/bin
-    ls /usr/local/bin
-    ls /bin
+    mvn --version
+    export LANG=C.UTF8
+    export LANGUAGE=C.UTF8
+    export LC_ALL=C.UTF8
+    locale
+    mvn --version
   commanders:
   - suseika
